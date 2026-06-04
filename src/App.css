@@ -650,7 +650,7 @@ h1 {
 
 .cta-section {
   background: linear-gradient(90deg, #020617 0%, #0f172a 50%, #020617 100%);
-  min-height: 520px;
+  min-height: 460px;
   padding: 120px 20px;
   display: flex;
   align-items: center;
@@ -668,8 +668,8 @@ h1 {
 }
 
 .cta-content h2 {
-  font-size: clamp(3rem, 6vw, 5rem);
-  line-height: 1.08;
+  font-size: clamp(2.4rem, 5vw, 4.2rem);
+  line-height: 1.12;
   color: #ffffff;
   margin-bottom: 28px;
   letter-spacing: -0.04em;
