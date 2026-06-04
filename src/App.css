@@ -1103,7 +1103,9 @@ h1 {
 }
 
 .why-header {
-  max-width: 780px;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
 }
 
 .why-section .section-label {
@@ -1119,7 +1121,8 @@ h1 {
   color: #cbd5e1;
   font-size: 1.05rem;
   line-height: 1.8;
-  margin-top: 18px;
+  margin: 18px auto 0;
+  text-align: center;
 }
 
 .why-grid {
