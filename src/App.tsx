@@ -304,6 +304,17 @@ const translations = {
     tradingText:
       "A trading calculator for profit and loss, leverage, fees, ROI, position size and account balance calculations.",
 
+    inDevelopmentLabel: "In development",
+    inDevelopmentTitle: "Systems and tools in development",
+    inDevelopmentIntro:
+      "A look at systems and tools currently being planned or developed by Graniten Studio.",
+
+    barcodeSystemText:
+      "A planned barcode system for Lilla Vitas Blommor, designed to support product handling, labeling and better structure in the business.",
+
+    foundationSystemText:
+      "A system in development that collects and structures information about funds and foundations, with a focus on making it easier to understand what can be applied for and how the support works.",
+
     aboutLabel: "About",
     aboutTitle: "Developer with practical business experience.",
     aboutText:
@@ -422,6 +433,17 @@ const translations = {
 
     tradingText:
       "En tradingkalkylator för vinst och förlust, hävstång, avgifter, ROI, positionsstorlek och kontobalans.",
+
+    inDevelopmentLabel: "Under utveckling",
+    inDevelopmentTitle: "System och verktyg under utveckling",
+    inDevelopmentIntro:
+      "En överblick över system och verktyg som planeras eller utvecklas av Graniten Studio.",
+
+    barcodeSystemText:
+      "Ett planerat streckkodssystem för Lilla Vitas Blommor som ska hjälpa till med produkthantering, märkning och bättre struktur i verksamheten.",
+
+    foundationSystemText:
+      "Ett system under utveckling som samlar och strukturerar information om fonder och stiftelser, med fokus på att göra det enklare att förstå vad man kan söka och hur stöden fungerar.",
 
     aboutLabel: "Om mig",
     aboutTitle: "Utvecklare med praktisk affärserfarenhet.",
@@ -594,7 +616,7 @@ function PricingSection({ language }: { language: Language }) {
             key={pkg.name}
             >
             {pkg.badge && <span className="pricing-badge">{pkg.badge}</span>}
-            
+
             <h3>{pkg.name}</h3>
 
             <div className="pricing-price">
@@ -770,6 +792,21 @@ function ProjectsSection({ t }: { t: Translation }) {
   const featuredProjects = projects.filter((project) => project.featured);
   const toolProjects = projects.filter((project) => !project.featured);
 
+  const inDevelopmentProjects = [
+  {
+    title: "Barcode System for Lilla Vitas Blommor",
+    type: t.inDevelopmentLabel,
+    stack: "React • TypeScript • C# • SQL",
+    text: t.barcodeSystemText,
+  },
+  {
+    title: "Funds & Foundations System",
+    type: t.inDevelopmentLabel,
+    stack: "C# • SQL • Data collection • Web interface",
+    text: t.foundationSystemText,
+  },
+];
+
   return (
     <section id="projects" className="section dark-section projects-section">
       <p className="section-label">{t.projectsLabel}</p>
@@ -804,30 +841,53 @@ function ProjectsSection({ t }: { t: Translation }) {
         ))}
       </div>
 
-      <div className="tool-projects-grid">
-        {toolProjects.map((project) => (
-          <article className="tool-project-card" key={project.title}>
-            <div className="project-topline">
-              <span>{project.type}</span>
+            <div className="tool-projects-grid">
+              {toolProjects.map((project) => (
+                <article className="tool-project-card" key={project.title}>
+                  <div className="project-topline">
+                    <span>{project.type}</span>
+                  </div>
+
+                  <h3>{project.title}</h3>
+                  <p>{project.text}</p>
+
+                  <div className="project-stack">{project.stack}</div>
+
+                  <a
+                    className="project-link"
+                    href={project.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {t.visitWebsite}
+                  </a>
+                </article>
+              ))}
             </div>
 
-            <h3>{project.title}</h3>
-            <p>{project.text}</p>
+            <div className="in-development-section">
+              <div className="in-development-header">
+                <p className="section-label">{t.inDevelopmentLabel}</p>
+                <h3>{t.inDevelopmentTitle}</h3>
+                <p>{t.inDevelopmentIntro}</p>
+              </div>
 
-            <div className="project-stack">{project.stack}</div>
+              <div className="in-development-grid">
+                {inDevelopmentProjects.map((project) => (
+                  <article className="in-development-card" key={project.title}>
+                    <div className="project-topline">
+                      <span>{project.type}</span>
+                    </div>
 
-            <a
-              className="project-link"
-              href={project.url}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              {t.visitWebsite}
-            </a>
-          </article>
-        ))}
-      </div>
-    </section>
+                    <h3>{project.title}</h3>
+                    <p>{project.text}</p>
+
+                    <div className="project-stack">{project.stack}</div>
+                  </article>
+                ))}
+              </div>
+            </div>
+          </section>
   );
 }
 

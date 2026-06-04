@@ -1213,6 +1213,147 @@ h1 {
   margin-bottom: 18px;
 }
 
+.in-development-section {
+  margin-top: 72px;
+  padding-top: 56px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.in-development-header {
+  max-width: 780px;
+  margin: 0 auto 42px;
+  text-align: center;
+}
+
+.in-development-header .section-label {
+  color: #8ea2ff;
+}
+
+.in-development-header h3 {
+  color: #ffffff;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  line-height: 1.08;
+  letter-spacing: -0.04em;
+  margin-bottom: 18px;
+}
+
+.in-development-header p {
+  max-width: 720px;
+  margin: 0 auto;
+  color: #c9ced8;
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.in-development-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.in-development-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 310px;
+  padding: 34px;
+  border-radius: 26px;
+  text-align: left;
+  background: rgba(255, 255, 255, 0.045);
+  border: 1px solid rgba(142, 162, 255, 0.18);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.18);
+  overflow: hidden;
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    background 0.25s ease;
+}
+
+.in-development-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at top right,
+    rgba(142, 162, 255, 0.16),
+    transparent 36%
+  );
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.in-development-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(142, 162, 255, 0.36);
+  background: rgba(255, 255, 255, 0.07);
+}
+
+.in-development-card:hover::before {
+  opacity: 1;
+}
+
+.in-development-card .project-topline,
+.in-development-card h3,
+.in-development-card p,
+.in-development-card .project-stack {
+  position: relative;
+  z-index: 1;
+}
+
+.in-development-card h3 {
+  color: #ffffff;
+  font-size: 1.65rem;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  margin: 0 0 16px;
+}
+
+.in-development-card p {
+  color: #c9ced8;
+  line-height: 1.7;
+  margin: 0 0 22px;
+}
+
+.in-development-card .project-stack {
+  margin-top: auto;
+  padding-top: 22px;
+  color: #8ea2ff;
+  font-size: 0.9rem;
+  font-weight: 800;
+  line-height: 1.5;
+}
+
+@media (max-width: 760px) {
+  .in-development-section {
+    margin-top: 56px;
+    padding-top: 42px;
+  }
+
+  .in-development-header {
+    text-align: left;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .in-development-header h3 {
+    font-size: 2rem;
+  }
+
+  .in-development-header p {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .in-development-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .in-development-card {
+    min-height: auto;
+    padding: 28px;
+  }
+}
+
 @media (max-width: 900px) {
   .contact-grid {
     grid-template-columns: 1fr;
