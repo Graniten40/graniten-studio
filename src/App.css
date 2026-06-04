@@ -658,6 +658,10 @@ h1 {
   text-align: center;
 }
 
+.cta-section .section-label {
+  color: #8ea2ff;
+}
+
 .cta-content {
   max-width: 980px;
   margin: 0 auto;
