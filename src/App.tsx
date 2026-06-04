@@ -30,6 +30,7 @@ const pricingContent = {
         name: "Business Website",
         price: "från 11 900 kr",
         vat: "exkl. moms",
+        badge: "Mest valt",
         description:
           "För företag som behöver en mer komplett hemsida med flera sidor och tydligare struktur.",
         features: [
@@ -101,6 +102,7 @@ const pricingContent = {
         name: "Business Website",
         price: "from SEK 11,900",
         vat: "excl. VAT",
+        badge: "Best value",
         description:
           "For businesses that need a more complete website with multiple pages and a clear structure.",
         features: [
@@ -587,7 +589,12 @@ function PricingSection({ language }: { language: Language }) {
 
       <div className="pricing-grid">
         {content.packages.map((pkg) => (
-          <article className="pricing-card" key={pkg.name}>
+          <article
+            className={`pricing-card ${pkg.badge ? "featured-pricing-card" : ""}`}
+            key={pkg.name}
+            >
+            {pkg.badge && <span className="pricing-badge">{pkg.badge}</span>}
+            
             <h3>{pkg.name}</h3>
 
             <div className="pricing-price">

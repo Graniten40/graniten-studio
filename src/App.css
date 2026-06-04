@@ -1129,6 +1129,45 @@ h1 {
   margin: 0;
 }
 
+.featured-pricing-card {
+  position: relative;
+  border: 2px solid #0f172a;
+  border-radius: 28px;
+  background: #ffffff;
+  transform: translateY(-8px);
+  z-index: 1;
+  overflow: visible;
+}
+
+.featured-pricing-card::after {
+  content: "";
+  position: absolute;
+  inset: 12px;
+  border-radius: 28px;
+  z-index: -1;
+  background: transparent;
+  box-shadow:
+    0 24px 50px rgba(37, 99, 235, 0.18),
+    0 10px 24px rgba(37, 99, 235, 0.14),
+    0 0 22px rgba(37, 99, 235, 0.12);
+  filter: blur(16px);
+}
+
+.pricing-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #0f172a;
+  color: #ffffff;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 8px 14px;
+  border-radius: 999px;
+  margin-bottom: 18px;
+}
+
 @media (max-width: 900px) {
   .contact-grid {
     grid-template-columns: 1fr;
