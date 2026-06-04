@@ -1390,3 +1390,7 @@ h1 {
     padding: 26px;
   }
 }
+
+.cta-section .section-label {
+  color: #8ea2ff !important;
+}
