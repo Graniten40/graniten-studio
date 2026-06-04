@@ -650,7 +650,7 @@ h1 {
 
 .cta-section {
   background: linear-gradient(90deg, #020617 0%, #0f172a 50%, #020617 100%);
-  min-height: 460px;
+  min-height: 420px;
   padding: 90px 20px;
   display: flex;
   align-items: center;
