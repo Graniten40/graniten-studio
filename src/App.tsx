@@ -516,6 +516,66 @@ function LanguageSwitcher({
   );
 }
 
+const whyChooseContent = {
+  sv: {
+    eyebrow: "Varför Graniten Studio?",
+    title: "En trygg partner för din digitala närvaro",
+    subtitle:
+      "Graniten Studio kombinerar modern webbutveckling med praktisk affärsförståelse. Målet är att skapa hemsidor och digitala lösningar som är tydliga, snabba och användbara för riktiga företag.",
+    items: [
+      {
+        number: "01",
+        title: "Tydlig kommunikation",
+        text: "Du får en enkel och rak process där du vet vad som görs, varför det görs och vad nästa steg är.",
+      },
+      {
+        number: "02",
+        title: "Modern teknik",
+        text: "Hemsidor byggs med moderna tekniker som React, TypeScript, Vite, C#, .NET och SQL.",
+      },
+      {
+        number: "03",
+        title: "Fokus på företagets behov",
+        text: "Lösningen anpassas efter ditt företag, dina kunder och vad hemsidan faktiskt ska hjälpa dig att uppnå.",
+      },
+      {
+        number: "04",
+        title: "Långsiktigt tänkande",
+        text: "Hemsidan byggs så att den kan underhållas, förbättras och växa vidare över tid.",
+      },
+    ],
+  },
+
+  en: {
+    eyebrow: "Why Graniten Studio?",
+    title: "A reliable partner for your digital presence",
+    subtitle:
+      "Graniten Studio combines modern web development with practical business understanding. The goal is to create websites and digital solutions that are clear, fast and useful for real businesses.",
+    items: [
+      {
+        number: "01",
+        title: "Clear communication",
+        text: "You get a simple and transparent process where you know what is being built, why it matters and what the next step is.",
+      },
+      {
+        number: "02",
+        title: "Modern technology",
+        text: "Websites are built with modern technologies such as React, TypeScript, Vite, C#, .NET and SQL.",
+      },
+      {
+        number: "03",
+        title: "Business-focused solutions",
+        text: "The solution is adapted to your business, your customers and what the website should actually help you achieve.",
+      },
+      {
+        number: "04",
+        title: "Long-term thinking",
+        text: "The website is built so it can be maintained, improved and expanded over time.",
+      },
+    ],
+  },
+};
+
 function PricingSection({ language }: { language: Language }) {
   const content = pricingContent[language];
 
@@ -585,6 +645,30 @@ function ProcessSection({ language }: { language: Language }) {
             <span className="process-number">{step.number}</span>
             <h3>{step.title}</h3>
             <p>{step.text}</p>
+          </article>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function WhyChooseSection({ language }: { language: Language }) {
+  const content = whyChooseContent[language];
+
+  return (
+    <section id="why-graniten" className="section why-section">
+      <div className="why-header">
+        <p className="section-label">{content.eyebrow}</p>
+        <h2>{content.title}</h2>
+        <p className="why-intro">{content.subtitle}</p>
+      </div>
+
+      <div className="why-grid">
+        {content.items.map((item) => (
+          <article className="why-card" key={item.number}>
+            <span className="why-number">{item.number}</span>
+            <h3>{item.title}</h3>
+            <p>{item.text}</p>
           </article>
         ))}
       </div>
@@ -821,6 +905,8 @@ function HomePage({ language, setLanguage, t }: PageProps) {
       <CtaSection language={language} />
 
       <PricingSection language={language} />
+
+      <WhyChooseSection language={language} />
 
       <ProcessSection language={language} />
 
