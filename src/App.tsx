@@ -286,6 +286,9 @@ const translations = {
     lillavitasText:
       "A responsive website for a local flower shop with order inquiry, Google Maps integration and technical SEO setup.",
 
+    laFornettoText:
+      "A modern bilingual restaurant website with digital menu, QR code access, opening hours, contact details, Google Maps integration and technical SEO setup.",  
+
     murByggText:
       "A company website for a masonry and construction business, focused on trust, local visibility and clear service presentation.",
 
@@ -415,6 +418,9 @@ const translations = {
 
     lillavitasText:
       "En responsiv hemsida för en lokal blomsterbutik med orderförfrågan, Google Maps-integration och teknisk SEO.",
+
+    laFornettoText:
+      "En modern tvåspråkig restauranghemsida med digital meny, QR-kod till menyn, öppettider, kontaktuppgifter, Google Maps-integration och teknisk SEO.",
 
     murByggText:
       "En företagssida för ett mur- och byggföretag med fokus på förtroende, lokal synlighet och tydlig presentation av tjänster.",
@@ -737,6 +743,15 @@ function ProjectsSection({ t }: { t: Translation }) {
       stack: "React • Vite • Tailwind • EmailJS • SEO",
       text: t.lillavitasText,
       url: "https://lillavitasblommor.se/",
+      featured: true,
+    },
+    {
+      title: "La Fornetto",
+      type: "Website",
+      stack: "React • Vite • TypeScript • SEO • Cloudflare Pages",
+      text:
+        t.laFornettoText,
+      url: "https://lafornetto.se/",
       featured: true,
     },
     {
